@@ -2,6 +2,10 @@
 
 @section('content')
   <div class="container py-5">
+    <h1>Comics list</h1>
+    <div class="text-end">
+      <a class="btn btn-success" href="{{route('comics.create')}}">New Comic</a>
+    </div>
     <table class="table">
       <thead>
         <tr>
