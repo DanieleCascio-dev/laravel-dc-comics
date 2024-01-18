@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('image');
-            $table->float('price');
+            $table->string('price');
             $table->string('series');
             $table->dateTime('sale_date');
             $table->string('type');
