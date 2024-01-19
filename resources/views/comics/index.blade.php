@@ -25,7 +25,9 @@
           <td>{{ $comic->series }}</td>
           <td>{{ $comic->sale_date }}</td>
           <td>
-            <a class="btn btn-success" href="{{ route('comics.show', $comic->id)}}">Dettagli</a>
+            <a class="btn btn-success" href="{{ route('comics.show', $comic->id)}}">Details</a>
+            <a class="btn btn-warning" href="{{ route('comics.edit', $comic->id)}}">Edit</a>
+            <a class="btn btn-danger" href="">Delete</a>
           </td>
         </tr>
             
