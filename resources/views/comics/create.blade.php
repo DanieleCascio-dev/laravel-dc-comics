@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   @if ($errors->any())
-  <div class="alert alert-danger">
+  <div class="alert alert-danger mt-3">
     <ul>
       @foreach ($errors->all() as $error)
       <li>{{ $error }}</li>
@@ -20,7 +20,7 @@
 
         <div class="mb-3">
           <label for="title" class="form-label">Titolo</label>
-          <input required type="text" class="form-control" id="title" name="title" >
+          <input type="text" class="form-control" id="title" name="title" value="{{old('title')}}" >
         </div>
 
         <div class="mb-3">
@@ -48,8 +48,8 @@
           {{-- <input type="text" class="form-control" id="type" name="type" > --}}
           <select name="type" id="type">
             <option value="" selected>Select one type</option>
-            <option value="graphic novel">Graphic novel</option>
-            <option value="comic book">Comic Book</option>
+            <option @selected(old('type') === 'graphic novel') value="graphic novel">Graphic novel</option>
+            <option @selected(old('type') === 'comic book') value="comic book">Comic Book</option>
           </select>
         </div>
 
