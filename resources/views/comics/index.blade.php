@@ -11,7 +11,7 @@
         
       </div>
       @endif
-      
+
     <div class="text-end">
       <a class="btn btn-success" href="{{route('comics.create')}}">New Comic</a>
     </div>
@@ -36,10 +36,10 @@
           <td>
             <a class="btn btn-success" href="{{ route('comics.show', $comic->id)}}">Details</a>
             <a class="btn btn-warning" href="{{ route('comics.edit', $comic->id)}}">Edit</a>
-            <form class="d-inline-block" action="{{ route('comics.destroy',['comic'=>$comic->id])}}" method="POST">
+            <form  class="d-inline-block" action="{{ route('comics.destroy',['comic'=>$comic->id])}}" method="POST">
               @csrf
               @method('DELETE')
-              <button class="btn btn-danger " type="submit">Delete</button>
+              <button class="btn btn-danger" type="submit">Delete</button>
 
             </form>
           </td>

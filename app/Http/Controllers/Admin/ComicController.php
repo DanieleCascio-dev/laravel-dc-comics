@@ -38,6 +38,15 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'=>'required|min:4|max:100',
+            'description'=>'required',
+            'image'=>'required',
+            'price'=>'required',
+            'sale_date'=>'required|date_format:Y:m:d',
+            'type'=>'required',
+            'series'=>'required',
+        ]);
         $form_comic = $request->all();
 
         $comic = new Comic();
@@ -107,6 +116,6 @@ class ComicController extends Controller
     {
         $comic_to_delete = Comic::findOrFail($id);
         $comic_to_delete->delete();
-         return redirect()->route('comics.index')->with('message','The comic' . $comic_to_delete->title . 'has been removed');
+         return redirect()->route('comics.index')->with('message','The comic ' . $comic_to_delete->title . ' has been removed');
     }
 }
